@@ -20,6 +20,23 @@ The **Products Gallery Web Application** is a fully responsive e-commerce fronte
 ## 📸 Screenshots
 
 ### 🏠 Home / Products Page
+![Products Page](./screenshots/light.png)
+
+### 🔍 Filtered Products
+![Search & Filter](./screenshots/filtration.png)
+
+### 📄 Product Details Page
+![Product Details](./screenshots/lightD.png)
+![Product Details](./screenshots/related.png)
+### 🌞 Dark Mode 
+![Product Details](./screenshots/grak1.png)
+![Product Details](./screenshots/dark.png)
+
+
+
+
+
+### 🏠 Home / Products Page
 
 ### 🔍 Filtered Products
 
@@ -70,13 +87,24 @@ src/
 │   │ 
 │   ├── Featur/        //  components (e.g., ProductCard)
 │   │    ├── layOut/
-│   │    ├── pages/ 
- 
-│   ├── share/             // components && pipes && directives && interfaces
-│   ├── app-routing.module.ts
-│   └── app.module.ts
+│   │    ├── pages/
+
+│   └── share/             // components && pipes && directives && interfaces
+
 ```
 
 
 ##🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+
+
+📄 License
+This project is open-source and free to use for educational or demo purposes.
+
+📬 Contact
+If you have any questions or suggestions, feel free to reach out:
+
+Email: karimfarouh7@gimail.com
+
+GitHub: https://github.com/Kareem-Mohamed-Farouh
