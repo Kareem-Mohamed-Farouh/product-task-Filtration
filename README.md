@@ -29,8 +29,8 @@ The **Products Gallery Web Application** is a fully responsive e-commerce fronte
 ![Product Details](./screenshots/lightD.png)
 ![Product Details](./screenshots/related.png)
 ### 🌞 Dark Mode 
-![Product Details](./screenshots/grak1.png)
-![Product Details](./screenshots/dark.png)
+![Product Dark](./screenshots/gark1.png)
+![Product Detail_dark](./screenshots/dark.png)
 
 
 
