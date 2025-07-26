@@ -33,8 +33,8 @@ The **Products Gallery Web Application** is a fully responsive e-commerce fronte
 
 | Layer              | Technology                                  |
 | ------------------ | ------------------------------------------- |
-| Frontend Framework | [Angular 16+](https://angular.io/)          |
-| UI Styling         | [Tailwind CSS](https://tailwindcss.com/)    |
+| Frontend Framework | [Angular 19](https://angular.io/)          |
+| UI Styling         | [Tailwind CSS v4](https://tailwindcss.com/)    |
 | API Source         | [Fake Store API](https://fakestoreapi.com/) |
 | State Management   | Angular Services                            |
 | Routing            | Angular Router                              |
