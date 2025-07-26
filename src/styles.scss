@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+// :host-context(.dark-mode) {
+//   background-color: var(--bg-color);
+//   color: var(--text-color);
+// }
+
+// .dark-mode {
+//   --bg-color: #10253e;
+//   --text-color: #1f6c79;
+//   --primary-color: #90caf9;
+//   background-color: var(--bg-color);
+//   color: var(--text-color);
+// }
