@@ -7,7 +7,7 @@ import { IProduct } from '../../../shared/interfaces/product';
 import { SearchPipe } from '../../../shared/pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
-import { timeout } from 'rxjs';
+import { Subscription, timeout } from 'rxjs';
 @Component({
   selector: 'app-product',
   imports: [RouterLink, FormsModule, LoadingComponent],
@@ -21,9 +21,9 @@ export class ProductComponent {
   categories: WritableSignal<string[]> = signal<string[]>([]);
   selectCategory = new Set<string>();
   searchWord: WritableSignal<string> = signal<string>('');
-  // Selected filters
   selectedFilters: WritableSignal<Set<string>> = signal(new Set<string>());
   filteredProducts: WritableSignal<IProduct[]> = signal([]);
+  subescribtios: Subscription = new Subscription();
 
   isCategoryChecked: boolean[] = [true, true, true, true];
   loading: WritableSignal<boolean> = signal<boolean>(false);
@@ -32,7 +32,7 @@ export class ProductComponent {
     this.getProductData();
   }
   getProductData(): void {
-    this.products.getProducts().subscribe({
+    this.subescribtios = this.products.getProducts().subscribe({
       next: (data) => {
         console.log('Product data coming successfully:', data);
         this.productData.set(data);
@@ -106,5 +106,8 @@ export class ProductComponent {
 
   toggle(): void {
     this.translate.set(!this.translate());
+  }
+  ngOnDestroy(): void {
+    this.subescribtios.unsubscribe();
   }
 }
