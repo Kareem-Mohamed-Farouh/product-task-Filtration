@@ -58,7 +58,7 @@ ng serve
 ```
 
 ##📂 Project Structure
-
+```bash
 src/
 ├── app/
 │   ├── core/              // Services
@@ -75,7 +75,7 @@ src/
 │   ├── share/             // components && pipes && directives && interfaces
 │   ├── app-routing.module.ts
 │   └── app.module.ts
-
+```
 
 
 ##🤝 Contributing
