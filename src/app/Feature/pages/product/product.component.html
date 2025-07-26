@@ -64,14 +64,14 @@
 
  -->
 <section
-  class="shop px-4 lg:px-[5rem] gap-3 xl:px-[15rem] bg-white dark:bg-slate-700"
+  class="shop px-2 lg:px-[5rem] gap-3 xl:px-[15rem] bg-white dark:bg-black"
 >
   <div class="grid grid-cols-5 gap-2">
     <div class="max-md:col-span-4 md:col-span-1 relative">
       <aside
+        [class.dark:bg-transprente]="translate()"
         [class.max-md:translate-x-[92%]]="translate()"
-        [class.max-md:bg-transparent]="translate()"
-        class="transition-all duration-300 max-md:bg-transparent max-md:bg-white dark:bg-slate-800 dark:text-white space-y-4 p-3 max-md:ps-8 overflow-y-auto grid grid-cols-1 max-md:fixed z-[500] end-0 top-0 bottom-0 md:bg-white gap-4 uppercase text-sm justify-between"
+        class="transition-all duration-300 max-md:bg-transparent max-md:bg-white dark:bg-[#080a2A] dark:text-white space-y-4 p-3 max-md:ps-8 overflow-y-auto grid grid-cols-1 max-md:fixed z-[500] end-0 top-0 bottom-0 md:bg-white gap-4 uppercase text-sm justify-between"
       >
         <div class="">
           <img
@@ -137,7 +137,7 @@
           </div>
         </div>
         <div
-          class="search-bar flex items-center gap-3 max-md:px-5 bg-gray-100 dark:bg-slate-900 dark:text-gray-300 p-3 rounded-md my-1"
+          class="search-bar flex items-center gap-3 max-md:px-5 bg-gray-100 dark:bg-[#08090A] dark:text-gray-300 p-3 rounded-md my-1"
         >
           <div class="my-3 w-full">
             <label
@@ -150,7 +150,7 @@
                 class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
               >
                 <svg
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  class="w-4 h-4 text-gray-500 max-md:text-xs dark:text-gray-400"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -175,16 +175,11 @@
                 placeholder="Search by title of prooduct..."
                 required
               />
-              <!-- <div
-                class="text-white cursor-pointer absolute end-2.5 bottom-2.5 bg-green-500 hover:bg-green-800 focus:ring-4 focus:outline-[var(--color-main-color)] focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2"
-              >
-                Search
-              </div> -->
             </div>
           </div>
           <div class="flex justify-between flex-col-reverse md:flex-row">
             <select
-              class="border rounded px-3 py-2"
+              class="border rounded dark:bg-[#08090A] px-3 py-2"
               (change)="sortProducts(getNameOption($event))"
             >
               <option value="a-z">Sort by: A-Z</option>
@@ -207,7 +202,7 @@
 
             <div
               [routerLink]="['/productsdetails', product.id]"
-              class="card dark:bg-slate-900 cursor-pointer p-3 flex flex-col gap-[1.25rem]shadow shadow-gray-300 m-1 shadow hover:shadow-lg transition-all duration-600 hover:shadow-green-400"
+              class="card dark:bg-[#08093a] cursor-pointer p-3 flex flex-col gap-[2.25rem]shadow shadow-gray-300 m-1 shadow hover:shadow-lg transition-all duration-600 hover:shadow-green-400"
             >
               <div class="card-img-top group relative cursor-pointer">
                 <div
@@ -228,7 +223,7 @@
               </div>
               <div class="card-body">
                 <p
-                  class="card-text h-[4rem] mt-1 font-semibold text-lg dark:text-gray-100 line-clamp-2"
+                  class="card-text h-[4rem] mt-1 font-semibold md:text-lg dark:text-gray-100 line-clamp-2"
                 >
                   {{ product.title.split(" ", 4).join(" ") }}
                 </p>
