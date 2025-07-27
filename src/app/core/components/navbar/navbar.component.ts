@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  inject,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -7,23 +14,28 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  private readonly platformId = inject(PLATFORM_ID);
+
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.mood();
   }
+
   changeMode() {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.toggle('dark');
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     } else {
-      document.documentElement.classList.toggle('dark');
+      document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     }
   }
 
   mood() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     document.documentElement.classList.toggle(
       'dark',
       localStorage.getItem('theme') === 'dark' ||

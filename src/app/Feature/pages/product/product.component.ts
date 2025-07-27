@@ -10,7 +10,7 @@ import { LoadingComponent } from '../../../shared/components/loading/loading.com
 import { Subscription, timeout } from 'rxjs';
 @Component({
   selector: 'app-product',
-  imports: [RouterLink, FormsModule, LoadingComponent],
+  imports: [RouterLink, FormsModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
@@ -24,7 +24,6 @@ export class ProductComponent {
   selectedFilters: WritableSignal<Set<string>> = signal(new Set<string>());
   filteredProducts: WritableSignal<IProduct[]> = signal([]);
   subescribtios: Subscription = new Subscription();
-
   isCategoryChecked: boolean[] = [true, true, true, true];
   loading: WritableSignal<boolean> = signal<boolean>(false);
 
@@ -85,6 +84,7 @@ export class ProductComponent {
   getNameOption(value: any): string {
     return value.target.value;
   }
+
   // Sort products based on selected type (price or title)
   sortProducts(type: string) {
     this.filteredProducts.set(
@@ -107,6 +107,7 @@ export class ProductComponent {
   toggle(): void {
     this.translate.set(!this.translate());
   }
+
   ngOnDestroy(): void {
     this.subescribtios.unsubscribe();
   }
